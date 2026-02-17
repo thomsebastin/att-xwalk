@@ -1,0 +1,23 @@
+# Ignore the merged CSS files. They are not linted. - Start.
+# Block generated files (base + brand + theme combinations)
+blocks/*/*/*.css
+!blocks/*/*/_*.css
+# Block theme generated files (base + theme combinations)
+blocks/*/themes/*/*.css
+!blocks/*/themes/*/_*.css
+# Block brand theme generated files (base + brand + theme combinations)
+blocks/*/*/themes/*/*.css
+!blocks/*/*/themes/*/_*.css
+# Styles generated files (base + theme combinations)
+styles/*/*.css
+!styles/*/_*.css
+# Styles theme generated files (base + theme combinations)
+styles/themes/*/*.css
+!styles/themes/*/_*.css
+# Styles brand generated files (base + brand combinations)
+styles/*/*/*.css
+!styles/*/*/_*.css
+# Styles brand theme generated files (base + brand + theme combinations)
+styles/*/themes/*/*.css
+!styles/*/themes/*/_*.css
+# Ignore the merged CSS files. They are not linted. - End.
