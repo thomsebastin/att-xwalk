@@ -12,7 +12,15 @@
     "build:json:models": "merge-json-cli -i \"models/_component-models.json\" -o \"component-models.json\"",
     "build:json:definitions": "merge-json-cli -i \"models/_component-definition.json\" -o \"component-definition.json\"",
     "build:json:filters": "merge-json-cli -i \"models/_component-filters.json\" -o \"component-filters.json\"",
-    "prepare": "husky"
+    "prepare": "husky",
+    "start": "concurrently \"npm run scaffold:start\" \"aem up\"",
+    "scaffold:create": "plop component --plopfile theme-tools/plopfile.mjs",
+    "scaffold:create:log": "plop component --plopfile theme-tools/plopfile.mjs --verbose",
+    "scaffold:start": "cross-env NODE_OPTIONS='--max-old-space-size=4096' npx gulp createBrandCSS && npx gulp default",
+    "scaffold:build": "cross-env NODE_OPTIONS='--max-old-space-size=4096' npx gulp createBrandCSS",
+    "scaffold:build:log": "cross-env NODE_OPTIONS='--max-old-space-size=4096' node theme-tools/generate-css.js --verbose",
+    "scaffold:remove": "plop remove --plopfile theme-tools/plopfile.mjs",
+    "scaffold:remove:log": "plop remove --plopfile theme-tools/plopfile.mjs --verbose"
   },
   "repository": {
     "type": "git",
@@ -35,6 +43,12 @@
     "merge-json-cli": "1.0.4",
     "npm-run-all": "4.1.5",
     "stylelint": "17.0.0",
-    "stylelint-config-standard": "40.0.0"
+    "stylelint-config-standard": "40.0.0",
+    "gulp": "5.0.0",
+    "postcss-import": "16.1.0",
+    "dotenv": "16.4.7",
+    "plop": "4.0.1",
+    "concurrently": "9.1.2",
+    "cross-env": "10.1.0"
   }
 }
